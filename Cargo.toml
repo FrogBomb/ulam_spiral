@@ -1,0 +1,7 @@
+[package]
+name = "ulam_spiral"
+version = "0.1.0"
+authors = ["FrogBomb <TLBlanchet@gmail.com>"]
+
+[dependencies]
+image = "*"
