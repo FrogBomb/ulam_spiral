@@ -79,7 +79,7 @@ pub fn prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
     }
 }
 
-fn old_prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
+pub fn old_prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
     if iter_size < 5 {
          let mut ret = vec![false, false, true, true];
          ret.truncate(iter_size);
