@@ -30,7 +30,6 @@ fn point_on_spiral_to_array_index_end(spiral_size: usize, x: usize, y: usize)->u
             (spiral_size - skip_loop_num)*skip_loop_num*4 + point_on_spiral_to_array_index_end(
                     spiral_size-2*skip_loop_num, x-skip_loop_num, y-skip_loop_num)
         },
-            ss_minus_one*4 + point_on_spiral_to_array_index_end(spiral_size-2, x-1, y-1)
     }
 
 }
