@@ -13,41 +13,46 @@ pub fn prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
         while y_sq<iter_size {
             if y_sq%2 == 1 {
                 //n_1 = 4x^2 + y^2 === 1 (mod 4)
-                let (mut n_1, mut to_next_n_1) = (4 + y_sq, 12);
-                while n_1<iter_size{
+                let (mut n_1, mut to_next_n_1) = (y_sq, 4);
+                loop{
+                    n_1 += to_next_n_1;
+                    to_next_n_1 += 8;
+                    match n_1%60{
+                        _ if n_1 >= iter_size => break,
+                        1 | 13 | 17 | 29 | 37 | 41 | 49 | 53 => (),
+                        _ => continue,
+                    };
+
+                    // println!("1: {}", n_1);
                     prime_filter[n_1] ^= true;
-                    while{ //Do-while
-                        n_1 += to_next_n_1;
-                        to_next_n_1 *= 8;
-                        to_next_n_1 += 4;
-                        (n_1%3 == 0) | (n_1%5 == 0)
-                    } {}
                 };
             };
             if y_sq%3 == 1 {
                 //n_2 = 3x^2 + y^2 === 1 (mod 6)
-                let (mut n_2, mut to_next_n_2) = ((y_sq%2)*9+3 + y_sq, (y_sq%2)*12+24);
-                while n_2<iter_size {
+                let (mut n_2, mut to_next_n_2) = (y_sq, 3);
+                loop {
+                    n_2 += to_next_n_2;
+                    to_next_n_2 += 6;
+                    match n_2%60{
+                        _ if n_2 >= iter_size => break,
+                        7 | 19 | 31 | 43 => (),
+                        _ => continue,
+                    };
+                    // println!("2: {}", n_2);
                     prime_filter[n_2] ^= true;
-                    while{ //Do-while
-                        n_2 += to_next_n_2;
-                        to_next_n_2 += 1;
-                        to_next_n_2 *= 12;
-                        n_2%5==0
-                    } {}
                 };
-            };
-            if y_sq%12 == 1 {
                 //n_3 = 3x^2 - y^2 === 11 (mod 12)
-                let (mut n_3, mut to_next_n_3) = (2*y_sq + 3*to_next_y_sq, 24);
-                while n_3<iter_size {
+                let (mut n_3, mut to_next_n_3) = (2*y_sq, 3*to_next_y_sq);
+                loop {
+                    n_3 += to_next_n_3;
+                    to_next_n_3 += 6;
+                    match n_3%60{
+                        _ if n_3 >= iter_size => break,
+                        11 | 23 | 47 | 59 => (),
+                        _ => continue,
+                    };
+                    // println!("3: {}", n_3);
                     prime_filter[n_3] ^= true;
-                    while{ //Do-while
-                        n_3 += to_next_n_3;
-                        to_next_n_3 += 1;
-                        to_next_n_3 *= 12;
-                        n_3%5==0
-                    } {};
                 };
             };
             while{ //Do-while
@@ -70,8 +75,7 @@ pub fn prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
             };
             while{ //Do-while
                 n_sq += next_n_sq;
-                next_n_sq += 1;
-                next_n_sq *= 4;
+                next_n_sq += 8;
                 (n_sq%3==0) | (n_sq%5 == 0)
             } {};
         }

@@ -27,9 +27,13 @@ fn main() {
     let (path, size) = get_env(200);
     // println!("{}", path);
     let num_primes = size*size + 1;
-    let is_prime_iter = primes::old_prime_filter(num_primes);
+    let is_prime_iter = primes::prime_filter(num_primes);
+    // let is_old_prime_iter = primes::old_prime_filter(num_primes);
     draw_spiral::prime_filter_to_spiral_png(size, is_prime_iter, path);
     // for (i, j) in is_prime_iter.iter().enumerate(){
     //     println!("{} is prime: {}", i, j);
+    // }
+    // for n in 0..num_primes{
+    //     assert_eq!(is_prime_iter[n], is_old_prime_iter[n], "{}", n);
     // }
 }
