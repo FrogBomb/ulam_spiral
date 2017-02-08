@@ -85,6 +85,7 @@ pub fn prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
 
 fn old_prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
     slow_prime_filter(iter_size)
+}
 
 fn slow_prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
     if iter_size < 5 {
@@ -107,7 +108,8 @@ fn slow_prime_filter(iter_size: usize) -> std::vec::Vec<bool>{
             }
             cur_num += 1;
         }
-    }
+    };
+    prime_filter
 }
 //not idiomatic, but I'm doing it anyway.
 #[test]
