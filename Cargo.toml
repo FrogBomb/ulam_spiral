@@ -5,3 +5,4 @@ authors = ["FrogBomb <TLBlanchet@gmail.com>"]
 
 [dependencies]
 image = "*"
+prime_sieve = { git = "https://github.com/FrogBomb/prime_sieve"}

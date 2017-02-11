@@ -3,6 +3,7 @@ name = "ulam_spiral"
 version = "0.1.0"
 dependencies = [
  "image 0.12.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "prime_sieve 0.1.0 (git+https://github.com/FrogBomb/prime_sieve)",
 ]
 
 [[package]]
@@ -156,6 +157,11 @@ dependencies = [
 ]
 
 [[package]]
+name = "prime_sieve"
+version = "0.1.0"
+source = "git+https://github.com/FrogBomb/prime_sieve#504a9b1bc20b5c99146da86444a5582b389f7fb2"
+
+[[package]]
 name = "rand"
 version = "0.3.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -200,6 +206,7 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 "checksum num-traits 0.1.36 (registry+https://github.com/rust-lang/crates.io-index)" = "a16a42856a256b39c6d3484f097f6713e14feacd9bfb02290917904fae46c81c"
 "checksum num_cpus 1.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = "a225d1e2717567599c24f88e49f00856c6e825a12125181ee42c4257e3688d39"
 "checksum png 0.6.2 (registry+https://github.com/rust-lang/crates.io-index)" = "3cb773e9a557edb568ce9935cf783e3cdcabe06a9449d41b3e5506d88e582c82"
+"checksum prime_sieve 0.1.0 (git+https://github.com/FrogBomb/prime_sieve)" = "<none>"
 "checksum rand 0.3.15 (registry+https://github.com/rust-lang/crates.io-index)" = "022e0636ec2519ddae48154b028864bdce4eaf7d35226ab8e65c611be97b189d"
 "checksum rayon 0.6.0 (registry+https://github.com/rust-lang/crates.io-index)" = "50c575b58c2b109e2fbc181820cbe177474f35610ff9e357dc75f6bac854ffbf"
 "checksum scoped_threadpool 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)" = "3ef399c8893e8cb7aa9696e895427fab3a6bf265977bb96e126f24ddd2cda85a"
