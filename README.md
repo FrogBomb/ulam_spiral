@@ -1,4 +1,4 @@
-# ulam_spiral
+# ulam_spiral [![Build Status](https://travis-ci.org/FrogBomb/ulam_spiral.svg?branch=master)](https://travis-ci.org/FrogBomb/ulam_spiral)
 makes a png of an ulam spiral
 
 ## To Use:
