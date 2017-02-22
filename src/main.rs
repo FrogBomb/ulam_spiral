@@ -1,6 +1,6 @@
 use std::env;
 use std::process;
-extern crate prime_sieve;
+extern crate concurrent_prime_sieve;
 use concurrent_prime_sieve::filter::prime_filter;
 mod draw_spiral;
 fn help() -> !{
