@@ -1,7 +1,7 @@
 use std::env;
 use std::process;
 extern crate prime_sieve;
-use prime_sieve::filter::prime_filter;
+use concurrent_prime_sieve::filter::prime_filter;
 mod draw_spiral;
 fn help() -> !{
     println!("Can only use up to 2 environment variables. E.G.");
